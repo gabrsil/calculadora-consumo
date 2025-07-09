@@ -1,0 +1,195 @@
+<!-- File ./templates/index.html  -->
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='dist/output.css')}}"
+    />
+    <title>Document</title>
+  </head>
+  <body class="w-full h-screen">
+    <main class="h-full">
+      {% if type == "water" %}
+      <div class="w-full h-full flex flex-col items-center justify-center">
+        <p class="text-[56px]">Dicas para economizar água:</p>
+        <ul class="w-1/2 mx-auto list-disc">
+          <li>
+            <p class="font-bold">Tome banhos mais curtos</p>
+            <p>
+              Um banho de 5 minutos pode economizar até 200 litros de água em
+              comparação com um banho mais longo
+            </p>
+          </li>
+          <li>
+            <p class="font-bold">
+              Feche a torneira ao escovar os dentes e fazer a barba
+            </p>
+            <p>
+              Deixar a torneira aberta durante essas atividades pode desperdiçar
+              até 12 litros de água por minuto, informa o Estadão E-Investidor.
+            </p>
+          </li>
+          <li>
+            <p class="font-bold">Utilize a descarga de forma consciente</p>
+            <p>
+              Evite acionamentos desnecessários da descarga e, se possível,
+              instale modelos com sistema de duplo acionamento.
+            </p>
+          </li>
+          <li>
+            <p class="font-bold">
+              Limpe o quintal com vassoura e não com mangueira
+            </p>
+            <p>
+              Varra o quintal em vez de usar a mangueira para lavar,
+              economizando água e evitando o desperdício
+            </p>
+          </li>
+          <li>
+            <p class="font-bold">Verifique e conserte vazamentos</p>
+            <p>
+              Pequenos vazamentos podem causar um grande desperdício de água,
+              portanto, mantenha a sua instalação hidráulica sempre em bom
+              estado, como destaca o Blog da Porto.
+            </p>
+          </li>
+        </ul>
+        <div class="mt-6">
+          <p class="text-sm">
+            Quer mais dicas?
+            <a
+              href="https://www.caesb.df.gov.br/dicas-de-economia-de-agua/"
+              target="_blank"
+              class="text-blue-400"
+            >
+              acesse o texto da CAESB
+            </a>
+            com dicas para o uso consciente da água.
+          </p>
+          <form method="POST">
+            <button
+              type="submit"
+              name="calculate_water"
+              class="h-14 hover:bg-[#a1c4fd] mt-4 hover:text-white hover:border-none text-[24px] border font-semibold border-[#a1c4fd] text-[#a1c4fd] cursor-pointer px-6 rounded-lg w-full"
+            >
+              Realizar Calculo de Economia
+            </button>
+          </form>
+        </div>
+      </div>
+      {% elif type == "energy" %}
+      <div class="w-full h-full flex flex-col items-center justify-center">
+        <p class="text-[56px]">Dicas para economizar energia:</p>
+        <ul class="w-1/2 mx-auto list-disc">
+          <li>
+            <p class="font-bold">Aproveite a luz natural</p>
+            <p>
+              Abra cortinas e persianas durante o dia e utilize cores claras nas paredes para refletir a luz natural, reduzindo a necessidade de iluminação artificial.</p>
+          </li>
+          <li>
+            <p class="font-bold">
+              Substitua lâmpadas
+            </p>
+            <p>
+              Lâmpadas LED consomem menos energia e duram mais do que as incandescentes ou fluorescentes.
+            </p>
+          </li>
+          <li>
+            <p class="font-bold">Reduza o tempo no banho</p>
+            <p>
+              Banhos mais curtos e com temperatura mais amena ajudam a economizar água e energia do chuveiro.</p>
+          </li>
+          <li>
+            <p class="font-bold">
+              Verifique a eficiência dos eletrodomésticos
+            </p>
+            <p>
+              Ao comprar novos equipamentos, priorize aqueles com selo Procel, que indicam maior eficiência energética.</p>
+          </li>
+        </ul>
+        <div class="mt-6">
+          <p class="text-sm">
+            Quer mais dicas?
+            <a
+              href="https://www.neoenergia.com/como-economizar-energia"
+              target="_blank"
+              class="text-blue-400"
+            >
+              acesse o texto da Neoenergia
+            </a>
+            sobre uso consciente de energia.
+          </p>
+          <form method="POST">
+            <button
+              type="submit"
+              name="calculate_energy"
+              class="h-14 hover:bg-[#a1c4fd] mt-4 hover:text-white hover:border-none text-[24px] border font-semibold border-[#a1c4fd] text-[#a1c4fd] cursor-pointer px-6 rounded-lg w-full"
+            >
+              Realizar Calculo de Economia
+            </button>
+          </form>
+        </div>
+      </div>
+      {% elif type == "initial" %}
+      <section class="flex items-center h-full">
+        <div
+          class="w-1/2 flex items-center justify-center h-full bg-linear-to-r from-[#a1c4fd] to-[#c2e9fb]"
+        >
+          <div class="text-center">
+            <h1 class="text-[89px] text-white font-bold mb-[-20px] p-0">
+              Calculadora
+            </h1>
+            <p class="text-[24px] text-white text-end">
+              de Consumo de Água e Energia
+            </p>
+          </div>
+        </div>
+        <div class="w-1/2 flex p-4 items-center justify-center h-full">
+          <div class="flex flex-col">
+            <p class="text-justify text-lg text-neutral-400">
+              *mesmo que o agronegócio gaste uma grande quantidade da água do
+              país
+            </p>
+            <p class="text-justify text-lg text-neutral-400">
+              você ainda pode fazer sua parte!
+            </p>
+            <a href="#second-section">
+              <button
+                class="h-14 hover:bg-[#a1c4fd] mt-4 hover:text-white hover:border-none text-[24px] border font-semibold border-[#a1c4fd] text-[#a1c4fd] cursor-pointer px-6 rounded-lg"
+              >
+                Começar →
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+      <section class="h-full" id="second-section">
+        <div class="w-full h-full flex items-center flex-col justify-center">
+          <p class="text-[64px]">O que você deseja economizar?</p>
+          <form class="flex items-center" method="POST">
+            <button
+              type="submit"
+              name="water"
+              class="h-14 mr-4 hover:bg-[#a1c4fd] mt-4 hover:text-white hover:border-none text-[24px] border font-semibold border-[#a1c4fd] text-[#a1c4fd] cursor-pointer px-6 rounded-lg"
+            >
+              Água
+            </button>
+            <button
+              type="submit"
+              name="energy"
+              class="h-14 hover:bg-[#a1c4fd] mt-4 hover:text-white hover:border-none text-[24px] border font-semibold border-[#a1c4fd] text-[#a1c4fd] cursor-pointer px-6 rounded-lg"
+            >
+              Energia
+            </button>
+          </form>
+        </div>
+      </section>
+      <!-- {% else %} -->
+
+      {% endif %}
+    </main>
+  </body>
+</html>

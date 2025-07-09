@@ -1,0 +1,71 @@
+<!-- File ./templates/index.html  -->
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='dist/output.css')}}"
+    />
+    <title>Document</title>
+  </head>
+  <body class="w-full h-screen">
+    <main class="h-full bg-linear-to-r from-[#a1c4fd] to-[#c2e9fb]">
+      <div
+        class="w-[650px] mx-auto flex-col h-full flex items-center justify-center"
+      >
+        <form method="POST">
+          <p class="font-bold text-[64px] text-white">Calculo de Economia</p>
+          <div class="flex items-center w-full">
+            <div class="flex flex-col w-1/2 mr-2">
+              <label for="" class="text-white "
+                >Consumo de energia anterior (kwh)</label
+              >
+              <input
+                type="number"
+                name="consumo_antes"
+                class="bg-gray-50 h-12 bg-transparent bg-white text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="(kwh)"
+                required
+              />
+            </div>
+            <div class="flex flex-col w-1/2">
+              <label for="" class="text-white"
+                >Consumo de energia após (kwh)</label
+              >
+              <input
+                type="number"
+                name="consumo_depois"
+                class="bg-gray-50 h-12 bg-transparent bg-white text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="(kwh)"
+                required
+              />
+            </div>
+          </div>
+          <div class="flex flex-col mt-4 w-full">
+            <label for="" class="text-white mb-2"
+            >Valor por KWH</label
+          >
+            <input
+           
+            name="valor_kwh"
+            class="bg-gray-50 h-12 bg-transparent bg-white text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="R$"
+            required
+          />
+          </div>
+
+         
+          <button
+            type="submit"
+            name="result_energy"
+            class="h-14 w-full hover:bg-white mt-4 hover:text-[#a1c4fd] hover:border-none text-[24px] border font-semibold border-white text-white cursor-pointer px-6 rounded-lg"
+          >
+            Calcular →
+          </button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,73 @@
+<!-- File ./templates/result_water.html  -->
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='dist/output.css')}}"
+    />
+    <title>Document</title>
+  </head>
+  <body class="w-full h-screen">
+    <main class="h-full bg-linear-to-r from-[#a1c4fd] to-[#c2e9fb]">
+      <div
+        class="w-[650px] mx-auto flex-col h-full flex items-center justify-center"
+      >
+        {% if economia < 0 %}
+        <p class="text-[56px] text-white text-center">
+          Você não teve economia de energia :(
+        </p>
+        <p class="text-md text-white">
+          <a
+            href="https://www.neoenergia.com/como-economizar-energia"
+            target="_blank"
+            class="text-blue-400"
+          >
+            Clique aqui
+          </a>
+          para saber mais dicas de como economizar energia.
+        </p>
+        {% else %}
+        <p class="text-[56px] font-bold text-green-400">Parabéns!</p>
+        <p class="text-[56px] text-center text-white">
+          Você economizou R${{ "%.2f"|format(economia) }} de energia!
+        </p>
+        <div class="flex items-center border border-white rounded-md">
+          <div class="border-r border-r-white">
+            <p
+              class="text-white text-[20px] font-semibold border-b border-b-white p-2"
+            >
+              Consumo Antes em Reais
+            </p>
+            <p class="text-center text-white font-bold py-2">
+              R${{"%.2f"|format(valor_antes)}}
+            </p>
+          </div>
+          <div>
+            <p
+              class="text-white text-[20px] font-semibold border-b border-b-[#f2f2f2] p-2"
+            >
+              Consumo Depois em Reais
+            </p>
+            <p class="text-center text-white font-bold py-2">
+              R${{"%.2f"|format(valor_depois)}}
+            </p>
+          </div>
+        </div>
+        <p class="text-sm text-center text-white mt-4">
+          Continue adotando hábitos sustentáveis para economizar energia e
+          preservar o meio ambiente!
+        </p>
+        {% endif %}
+
+        <a
+          href="{{ url_for('main') }}"
+          class="mt-6 h-14 w-full hover:bg-white hover:text-[#a1c4fd] hover:border-none text-[24px] border font-semibold border-white text-white flex items-center justify-center cursor-pointer px-6 rounded-lg"
+          >Voltar</a
+        >
+      </div>
+    </main>
+  </body>
+</html>
