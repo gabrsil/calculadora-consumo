@@ -8,12 +8,12 @@
       rel="stylesheet"
       href="{{url_for('static',filename='dist/output.css')}}"
     />
-    <title>Document</title>
+    <title>Calculadora de Consumo</title>
   </head>
   <body class="w-full h-screen">
     <main class="h-full bg-linear-to-r from-[#a1c4fd] to-[#c2e9fb]">
       <div
-        class="w-[650px] mx-auto flex-col h-full flex items-center justify-center"
+        class="md:w-[650px] w-full md:px-0 px-6 mx-auto flex-col h-full flex items-center justify-center"
       >
         {% if economia < 0 %}
         <p class="text-[56px] text-white text-center">

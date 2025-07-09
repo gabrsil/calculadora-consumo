@@ -8,14 +8,14 @@
       rel="stylesheet"
       href="{{url_for('static',filename='dist/output.css')}}"
     />
-    <title>Document</title>
+    <title>Calculadora de Consumo</title>
   </head>
   <body class="w-full h-screen">
     <main class="h-full">
       {% if type == "water" %}
-      <div class="w-full h-full flex flex-col items-center justify-center">
-        <p class="text-[56px]">Dicas para economizar água:</p>
-        <ul class="w-1/2 mx-auto list-disc">
+      <div class="w-full h-full px-2 flex flex-col items-center justify-center">
+        <p class="md:text-[56px] text-[48px]">Dicas para economizar água:</p>
+        <ul class="md:w-1/2 w-full px-6 md:mx-0 mx-auto list-disc">
           <li>
             <p class="font-bold">Tome banhos mais curtos</p>
             <p>
@@ -73,7 +73,7 @@
             <button
               type="submit"
               name="calculate_water"
-              class="h-14 hover:bg-[#a1c4fd] mt-4 hover:text-white hover:border-none text-[24px] border font-semibold border-[#a1c4fd] text-[#a1c4fd] cursor-pointer px-6 rounded-lg w-full"
+              class="h-14 hover:bg-[#a1c4fd] mt-4 hover:text-white hover:border-none md:text-[24px] text-[18px] border font-semibold border-[#a1c4fd] text-[#a1c4fd] cursor-pointer px-6 rounded-lg w-full"
             >
               Realizar Calculo de Economia
             </button>
@@ -82,8 +82,8 @@
       </div>
       {% elif type == "energy" %}
       <div class="w-full h-full flex flex-col items-center justify-center">
-        <p class="text-[56px]">Dicas para economizar energia:</p>
-        <ul class="w-1/2 mx-auto list-disc">
+        <p class="md:text-[56px] text-[48px]">Dicas para economizar energia:</p>
+        <ul class="md:w-1/2 w-full px-6 md:mx-0 mx-auto list-disc">
           <li>
             <p class="font-bold">Aproveite a luz natural</p>
             <p>
@@ -126,7 +126,7 @@
             <button
               type="submit"
               name="calculate_energy"
-              class="h-14 hover:bg-[#a1c4fd] mt-4 hover:text-white hover:border-none text-[24px] border font-semibold border-[#a1c4fd] text-[#a1c4fd] cursor-pointer px-6 rounded-lg w-full"
+              class="h-14 hover:bg-[#a1c4fd] mt-4 hover:text-white hover:border-none md:text-[24px] text-[18px] border font-semibold border-[#a1c4fd] text-[#a1c4fd] cursor-pointer px-6 rounded-lg w-full"
             >
               Realizar Calculo de Economia
             </button>
@@ -134,12 +134,12 @@
         </div>
       </div>
       {% elif type == "initial" %}
-      <section class="flex items-center h-full">
+      <section class="flex md:flex-row flex-col items-center h-full">
         <div
-          class="w-1/2 flex items-center justify-center h-full bg-linear-to-r from-[#a1c4fd] to-[#c2e9fb]"
+          class="md:w-1/2 w-full flex items-center justify-center h-full bg-linear-to-r from-[#a1c4fd] to-[#c2e9fb]"
         >
           <div class="text-center">
-            <h1 class="text-[89px] text-white font-bold mb-[-20px] p-0">
+            <h1 class="lg:text-[89px] md:text-[70px] text-[56px] text-white font-bold mb-[-20px] p-0">
               Calculadora
             </h1>
             <p class="text-[24px] text-white text-end">
@@ -147,7 +147,7 @@
             </p>
           </div>
         </div>
-        <div class="w-1/2 flex p-4 items-center justify-center h-full">
+        <div class="md:w-1/2 w-full flex p-8 items-center justify-center h-full">
           <div class="flex flex-col">
             <p class="text-justify text-lg text-neutral-400">
               *mesmo que o agronegócio gaste uma grande quantidade da água do
@@ -168,7 +168,7 @@
       </section>
       <section class="h-full" id="second-section">
         <div class="w-full h-full flex items-center flex-col justify-center">
-          <p class="text-[64px]">O que você deseja economizar?</p>
+          <p class="md:text-[64px] text-[48px] text-center">O que você deseja economizar?</p> 
           <form class="flex items-center" method="POST">
             <button
               type="submit"

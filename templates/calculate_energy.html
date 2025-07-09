@@ -8,18 +8,18 @@
       rel="stylesheet"
       href="{{url_for('static',filename='dist/output.css')}}"
     />
-    <title>Document</title>
+    <title>Calculadora de Consumo</title>
   </head>
   <body class="w-full h-screen">
     <main class="h-full bg-linear-to-r from-[#a1c4fd] to-[#c2e9fb]">
       <div
-        class="w-[650px] mx-auto flex-col h-full flex items-center justify-center"
+        class="md:w-[650px] w-full md:px-0 px-6 mx-auto flex-col h-full flex items-center justify-center"
       >
         <form method="POST">
-          <p class="font-bold text-[64px] text-white">Calculo de Economia</p>
-          <div class="flex items-center w-full">
-            <div class="flex flex-col w-1/2 mr-2">
-              <label for="" class="text-white "
+          <p class="font-bold lg:text-[64px] md:text-[56px] text-[48px] text-center text-white">Calculo de Economia</p>
+          <div class="flex md:flex-row flex-col items-center w-full">
+            <div class="flex flex-col md:w-1/2 w-full md:mr-2 mr-0">
+              <label for="" class="text-white"
                 >Consumo de energia anterior (kwh)</label
               >
               <input
@@ -30,7 +30,7 @@
                 required
               />
             </div>
-            <div class="flex flex-col w-1/2">
+            <div class="flex flex-col md:w-1/2 w-full">
               <label for="" class="text-white"
                 >Consumo de energia após (kwh)</label
               >
@@ -44,19 +44,15 @@
             </div>
           </div>
           <div class="flex flex-col mt-4 w-full">
-            <label for="" class="text-white mb-2"
-            >Valor por KWH</label
-          >
+            <label for="" class="text-white mb-2">Valor por KWH</label>
             <input
-           
-            name="valor_kwh"
-            class="bg-gray-50 h-12 bg-transparent bg-white text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            placeholder="R$"
-            required
-          />
+              name="valor_kwh"
+              class="bg-gray-50 h-12 bg-transparent bg-white text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="R$"
+              required
+            />
           </div>
 
-         
           <button
             type="submit"
             name="result_energy"
